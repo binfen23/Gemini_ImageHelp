@@ -1,0 +1,137 @@
+/* ========== 下拉菜单容器 ========== */
+.remix-ratio-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  height: 32px;
+  margin-left: 4px;
+}
+
+/* 触发按钮 */
+.remix-ratio-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 32px;
+  padding: 0 12px 0 14px;
+  border: 1px solid var(--gem-sys-color--outline-variant) !important;
+  border-radius: 16px;
+  background: transparent;
+  color: var(--gem-sys-color--on-surface-variant) !important;
+  font-family: var(--mat-button-text-label-text-font, var(--mat-sys-label-large-font));
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+  white-space: nowrap;
+  user-select: none;
+  line-height: 32px;
+}
+
+.remix-ratio-trigger:hover {
+  background: rgba(196, 199, 197, 0.08);
+  border-color: #5f6368;
+}
+
+.remix-ratio-trigger:focus-visible {
+  outline: 2px solid #8ab4f8;
+  outline-offset: 1px;
+}
+
+/* 触发按钮里的箭头 */
+.remix-ratio-trigger .arrow-icon {
+  width: 18px;
+  height: 18px;
+  fill: #c4c7c5;
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.remix-ratio-wrapper.open .remix-ratio-trigger .arrow-icon {
+  transform: rotate(180deg);
+}
+
+/* 图标 */
+.remix-ratio-trigger .ratio-icon {
+  width: 18px;
+  height: 18px;
+  fill: #c4c7c5;
+  flex-shrink: 0;
+}
+
+/* ========== 下拉面板 ========== */
+.remix-ratio-dropdown {
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 0;
+  min-width: 180px;
+  background: var(--bard-color-synthetic--mat-card-background) !important;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4), 0 1px 4px rgba(0, 0, 0, 0.3);
+  padding: 6px 0;
+  z-index: 10000;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(4px) scale(0.97);
+  transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s;
+  pointer-events: none;
+}
+
+.remix-ratio-wrapper.open .remix-ratio-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+/* 下拉选项 */
+.remix-ratio-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 8px 16px;
+  border: none;
+  background: transparent;
+  color: var(--gem-sys-color--on-surface-variant) !important;
+  font-family: "Google Sans", Roboto, Arial, sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.15s;
+  white-space: nowrap;
+  line-height: 20px;
+}
+
+.remix-ratio-option:hover {
+  background: rgba(196, 199, 197, 0.08);
+}
+
+.remix-ratio-option.selected {
+  color: #aecbfa;
+}
+
+/* 选中对勾 */
+.remix-ratio-option .check-icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  fill: var(--gem-sys-color--primary) !important;
+  visibility: hidden;
+}
+
+.remix-ratio-option.selected .check-icon {
+  visibility: visible;
+}
+
+/* 选项文字 */
+.remix-ratio-option .option-label {
+  flex: 1;
+}
+
+/* ========== 发送重制按钮微调 ========== */
+#send_remix {
+  display: none;
+}
+
