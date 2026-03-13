@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Gemini Remix Helper",
+  "version": "2.0.0",
+  "description": "为 Gemini 添加图片生成重制按钮和比例选择功能 -by Zeb",
+  "permissions": [],
+  "icons": {
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://gemini.google.com/*"],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}
