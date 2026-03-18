@@ -2,7 +2,7 @@
 浏览器管理扩展插件界面，开启开发者模式，将Releases里面的zip插件拖进去即可！  
 
 ## 效果预览
-![light-theme](https://raw.githubusercontent.com/binfen23/Gemini_ImageHelp/refs/heads/main/images/light-ratio.png "light-theme")  
+![light-theme](https://raw.githubusercontent.com/binfen23/Gemini_ImageHelp/refs/heads/main/images/light-ratio1.png "light-theme")  
 
 ![light-theme2](https://raw.githubusercontent.com/binfen23/Gemini_ImageHelp/refs/heads/main/images/light-image%20library%20(1).png "light-theme2")  
 
@@ -10,7 +10,7 @@
 
 ------  
 
-![dark-theme](https://raw.githubusercontent.com/binfen23/Gemini_ImageHelp/refs/heads/main/dark-theme.png "dark-theme")  
+![dark-theme](https://raw.githubusercontent.com/binfen23/Gemini_ImageHelp/refs/heads/main/images/dark-ratio1.png "dark-theme")  
 
 ![light-theme2](https://raw.githubusercontent.com/binfen23/Gemini_ImageHelp/refs/heads/main/images/dark-image%20library%20(1).png "light-theme2")  
 
