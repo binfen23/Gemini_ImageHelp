@@ -1,19 +1,53 @@
 {
   "manifest_version": 3,
-  "name": "Gemini Remix Helper",
-  "version": "2.0.0",
-  "description": "为 Gemini 添加图片生成重制按钮和比例选择功能 -by Zeb",
-  "permissions": [],
+  "name": "Gemini Image Helper Pro",
+  "version": "5.0.9",
+  "description": "为 Gemini 添加图片比例选择功能与下载按钮直接去水印下载，右上角新增无水印图库功能。 --by Zeb",
+  "permissions": [
+    "cookies"
+  ],
+  "host_permissions": [
+    "*://*.googleusercontent.com/*",
+    "*://*.google.com/*"
+  ],
   "icons": {
     "48": "icon.png",
     "128": "icon.png"
   },
   "content_scripts": [
     {
-      "matches": ["https://gemini.google.com/*"],
-      "js": ["content.js"],
-      "css": ["styles.css"],
-      "run_at": "document_idle"
+      "matches": [
+        "*://gemini.google.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "css": [
+        "styles.css"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "*://gemini.google.com/*"
+      ],
+      "js": [
+        "inject.js"
+      ],
+      "run_at": "document_start",
+      "world": "MAIN"
+    },
+    {
+      "matches": [
+        "*://gemini.google.com/*"
+      ],
+      "js": [
+        "content_bridge.js"
+      ],
+      "run_at": "document_start"
     }
-  ]
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
 }
