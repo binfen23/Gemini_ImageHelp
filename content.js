@@ -21,7 +21,8 @@
     { label: "4:5（竖版）", value: "4:5" },
     { label: "16:9（横屏）", value: "16:9" },
     { label: "9:16（竖屏）", value: "9:16" },
-    { label: "21:9（横屏）", value: "21:9" }
+    { label: "21:9（横屏）", value: "21:9" },
+    { label: "Auto（自动）", value: "auto" }
   ];
 
   let selectedRatio = RATIO_OPTIONS[0]; // 默认 1:1
@@ -199,17 +200,22 @@
     if (!$(SEL.cancelMakeImage)) return;
 
     if (e.key === "Enter" && !e.shiftKey) {
-      // Enter → 换行
-      e.preventDefault();
-      e.stopImmediatePropagation();
-      document.execCommand("insertLineBreak");
-    } else if (e.key === "Enter" && e.shiftKey) {
-      // Shift+Enter → 触发「发送重制」
+      // Enter → 触发「发送重制」
+
       e.preventDefault();
       e.stopImmediatePropagation();
       const remixBtn = $(SEL.sendRemix);
       if (remixBtn) remixBtn.click();
-    }
+
+    } 
+
+//else if (e.key === "Enter" && e.shiftKey) {
+      // Shift+Enter → 换行
+      //e.preventDefault();
+     //e.stopImmediatePropagation();
+      //document.execCommand("insertLineBreak");
+    //}
+
   }
 
   // 以捕获阶段拦截，确保早于页面自身监听器
